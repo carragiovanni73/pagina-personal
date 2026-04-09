@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giovanni - Página Personal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e8f4fd;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, #4a90d9, #357abd);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        main img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+        main h2 {
+            margin-bottom: 15px;
+            color: #4a90d9;
+        }
+        main p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        footer {
+            background-color: #357abd;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>¡Hola! Soy Giovanni</h1>
+        <p>Estudiante de Ingeniería Informática &amp; Soporte IT</p>
+    </header>
+
+    <main>
+        <h2>Mi Infografía Personal</h2>
+        <img src="infografia.jpg" alt="Infografía personal de Giovanni">
+        <p>Buscando crecer en el mundo IT y mejorar cada día.</p>
+    </main>
+
+    <footer>
+        <p>Diseño y Desarrollo Web - UADE - 2026</p>
+    </footer>
+
+</body>
+</html>
+```
+
+---
+
+## Pasos en VS Code
+
+1. Abrí VS Code y creá una carpeta nueva (ej: `mi-pagina-personal`).
+2. Dentro de esa carpeta creá el archivo **`index.html`** y pegá el código de arriba.
+3. **Importante:** guardá tu imagen de la infografía (la que me mostraste) dentro de la misma carpeta con el nombre **`infografia.jpg`**. Si tu imagen es `.png`, cambiá en el código `infografia.jpg` por `infografia.png`.
+4. Podés hacer clic derecho en el archivo `index.html` > "Open with Live Server" (si tenés la extensión) o simplemente abrirlo en el navegador para ver cómo queda.
+
+---
+
+## Cómo subirlo a GitHub Pages (paso a paso)
+
+**1. Creá un repositorio en GitHub:**
+- Andá a [github.com](https://github.com) y logueate (o creá una cuenta si no tenés).
+- Hacé clic en el botón verde **"New"** (o el **+** arriba a la derecha > "New repository").
+- Ponele un nombre, por ejemplo: `pagina-personal`.
+- Dejalo en **Public**.
+- **No** marques "Add a README".
+- Hacé clic en **"Create repository"**.
+
+**2. Subí tus archivos:**
+- La forma más fácil: en la página del repo recién creado, hacé clic en **"uploading an existing file"** (aparece en las instrucciones).
+- Arrastrá los dos archivos: `index.html` y `infografia.jpg` (o .png).
+- Hacé clic en **"Commit changes"**.
+
+**3. Activá GitHub Pages:**
+- Dentro de tu repositorio, andá a **Settings** (la pestaña de arriba).
+- En el menú de la izquierda buscá **"Pages"**.
+- En **"Source"** seleccioná **"Deploy from a branch"**.
+- En **"Branch"** elegí **main** y dejá la carpeta en **/ (root)**.
+- Hacé clic en **"Save"**.
+
+**4. Esperá 1-2 minutos** y tu página va a estar online en:
+```
+https://TU-USUARIO.github.io/pagina-personal/
