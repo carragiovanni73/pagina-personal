@@ -1,346 +1,120 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Giovanni Carrá — Página Personal</title>
-        <style>
-                    * {
-                                    margin: 0;
-                                    padding: 0;
-                                    box-sizing: border-box;
-                    }
-
-                    body {
-                                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                                    background-color: #e8f4fd;
-                                    color: #333;
-                    }
-
-                    /* HEADER */
-                    header {
-                                    background: linear-gradient(135deg, #4a90d9, #357abd);
-                                    color: white;
-                                    padding: 40px 20px 0 20px;
-                    }
-
-                    .header-content {
-                                    max-width: 900px;
-                                    margin: 0 auto;
-                                    display: flex;
-                                    align-items: center;
-                                    gap: 24px;
-                                    padding-bottom: 30px;
-                    }
-
-                    .header-avatar {
-                                    width: 80px;
-                                    height: 80px;
-                                    border-radius: 50%;
-                                    background-color: rgba(255,255,255,0.25);
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    font-size: 2rem;
-                                    font-weight: 800;
-                                    color: white;
-                                    flex-shrink: 0;
-                                    border: 3px solid rgba(255,255,255,0.5);
-                    }
-
-                    .header-text h1 {
-                                    font-size: 2rem;
-                                    margin-bottom: 4px;
-                    }
-
-                    .header-text p {
-                                    font-size: 1rem;
-                                    opacity: 0.85;
-                    }
-
-                    /* NAV */
-                    nav {
-                                    background-color: rgba(0,0,0,0.2);
-                    }
-
-                    nav ul {
-                                    max-width: 900px;
-                                    margin: 0 auto;
-                                    list-style: none;
-                                    display: flex;
-                                    gap: 0;
-                    }
-
-                    nav ul li a {
-                                    display: block;
-                                    color: white;
-                                    text-decoration: none;
-                                    padding: 14px 22px;
-                                    font-size: 0.95rem;
-                                    transition: background 0.2s;
-                    }
-
-                    nav ul li a:hover {
-                                    background-color: rgba(255,255,255,0.15);
-                    }
-
-                    /* MAIN */
-                    main {
-                                    max-width: 900px;
-                                    margin: 36px auto;
-                                    padding: 0 20px;
-                    }
-
-                    /* SECCIONES */
-                    section {
-                                    margin-bottom: 36px;
-                    }
-
-                    .section-title {
-                                    font-size: 1.3rem;
-                                    font-weight: 700;
-                                    color: #357abd;
-                                    border-left: 4px solid #4a90d9;
-                                    padding-left: 12px;
-                                    margin-bottom: 16px;
-                    }
-
-                    /* SOBRE MI */
-                    .sobre-mi-card {
-                                    background: white;
-                                    border-radius: 12px;
-                                    padding: 24px;
-                                    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-                                    font-size: 1.05rem;
-                                    line-height: 1.7;
-                                    color: #444;
-                    }
-
-                    /* GRILLA DE INFO */
-                    .info-grid {
-                                    display: grid;
-                                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                                    gap: 16px;
-                    }
-
-                    .info-card {
-                                    background: white;
-                                    border-radius: 12px;
-                                    padding: 20px;
-                                    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-                                    text-align: center;
-                    }
-
-                    .info-card .icon {
-                                    font-size: 2rem;
-                                    margin-bottom: 10px;
-                    }
-
-                    .info-card h3 {
-                                    font-size: 0.85rem;
-                                    text-transform: uppercase;
-                                    letter-spacing: 0.05em;
-                                    color: #4a90d9;
-                                    margin-bottom: 8px;
-                    }
-
-                    .info-card p {
-                                    font-size: 0.95rem;
-                                    color: #555;
-                                    line-height: 1.5;
-                    }
-
-                    /* SKILLS */
-                    .skills-grid {
-                                    display: flex;
-                                    flex-wrap: wrap;
-                                    gap: 10px;
-                    }
-
-                    .skill-tag {
-                                    background: #4a90d9;
-                                    color: white;
-                                    border-radius: 20px;
-                                    padding: 6px 16px;
-                                    font-size: 0.9rem;
-                                    font-weight: 500;
-                    }
-
-                    .skill-tag.secondary {
-                                    background: white;
-                                    color: #357abd;
-                                    border: 2px solid #4a90d9;
-                    }
-
-                    /* INFOGRAFIA */
-                    .infografia-wrap {
-                                    background: white;
-                                    border-radius: 12px;
-                                    padding: 20px;
-                                    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-                                    text-align: center;
-                    }
-
-                    .infografia-wrap img {
-                                    max-width: 100%;
-                                    height: auto;
-                                    border-radius: 8px;
-                    }
-
-                    /* OBJETIVOS */
-                    .objetivos-list {
-                                    background: white;
-                                    border-radius: 12px;
-                                    padding: 24px;
-                                    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-                                    display: flex;
-                                    flex-direction: column;
-                                    gap: 12px;
-                    }
-
-                    .objetivo-item {
-                                    display: flex;
-                                    align-items: flex-start;
-                                    gap: 12px;
-                                    font-size: 1rem;
-                                    color: #444;
-                                    line-height: 1.5;
-                    }
-
-                    .objetivo-item span.bullet {
-                                    color: #4a90d9;
-                                    font-size: 1.2rem;
-                                    margin-top: 1px;
-                                    flex-shrink: 0;
-                    }
-
-                    /* FOOTER */
-                    footer {
-                                    background: linear-gradient(135deg, #4a90d9, #357abd);
-                                    color: white;
-                                    text-align: center;
-                                    padding: 24px 20px;
-                                    margin-top: 20px;
-                                    font-size: 0.95rem;
-                                    opacity: 0.95;
-                    }
-                </style>
-    </head>
-    <body>
-
-        <header>
-                <div class="header-content">
-                            <div class="header-avatar">GC</div>div>
-                            <div class="header-text">
-                                            <h1>Giovanni Carrá</h1>
-                                        <p>Estudiante de Ingeniería Informática &amp; Soporte IT — UADE</p>
-                            </div>div>
-                </div>div>
-            <nav>
-                        <ul>
-                                        <li><a href="#sobre-mi">Sobre mí</a>a></li>
-                                    <li><a href="#tecnologias">Tecnologías</a>a></li>
-                                    <li><a href="#infografia">Infografía</a>a></li>
-                                    <li><a href="#objetivos">Objetivos</a>a></li>
-                        </ul>
-            </nav>
-        </header>
-    
-    <main>
-
-            <!-- SOBRE MI -->
-            <section id="sobre-mi">
-                        <div class="section-title">Sobre mí</div>div>
-                        <div class="sobre-mi-card">
-                                        Hola, soy Giovanni Carrá, estudiante de Ingeniería Informática en UADE. Me especializo en Soporte IT, 
-                                        con experiencia en resolución de problemas técnicos, gestión de usuarios y atención a empleados. 
-                                        Me apasiona la tecnología y estoy en constante aprendizaje para crecer profesionalmente en el mundo IT.
-                        </div>div>
-            </section>section>
-
-            <!-- INFO CARDS -->
-            <section id="info">
-                        <div class="section-title">Mi perfil</div>div>
-                        <div class="info-grid">
-                                        <div class="info-card">
-                                                            <div class="icon">🎓</div>div>
-                                                            <h3>Estudios</h3>
-                                                            <p>Ingeniería Informática — UADE<br>Aprendiendo programación, sistemas y tecnología</p>
-                                        </div>div>
-                                    <div class="info-card">
-                                                    <div class="icon">💼</div>div>
-                                                    <h3>Trabajo</h3>
-                                                    <p>Soporte IT interno<br>Gestión de usuarios, cuentas y sistemas</p>
-                                    </div>div>
-                                    <div class="info-card">
-                                                    <div class="icon">🚀</div>div>
-                                                    <h3>Perfil</h3>
-                                                    <p>Responsable y resolutivo<br>Interesado en crecer a nivel profesional (junior → semi senior)</p>
-                                    </div>div>
-                        </div>div>
-            </section>section>
-    
-        <!-- TECNOLOGIAS -->
-        <section id="tecnologias">
-                <div class="section-title">Tecnologías y herramientas</div>div>
-                <div class="info-card" style="text-align:left; padding: 24px;">
-                            <div class="skills-grid">
-                                            <span class="skill-tag">HTML</span>span>
-                                            <span class="skill-tag">CSS</span>span>
-                                            <span class="skill-tag">Soporte IT</span>span>
-                                            <span class="skill-tag">Bases de IT</span>span>
-                                            <span class="skill-tag secondary">Gestión de usuarios</span>span>
-                                            <span class="skill-tag secondary">Resolución de problemas</span>span>
-                                            <span class="skill-tag secondary">Herramientas de sistemas</span>span>
-                                            <span class="skill-tag secondary">GitHub</span>span>
-                            </div>div>
-                </div>div>
-        </section>section>
-    
-        <!-- INFOGRAFIA -->
-        <section id="infografia">
-                <div class="section-title">Mi Infografía Personal</div>div>
-                <div class="infografia-wrap">
-                            <img src="infografia.jpg" alt="Infografía personal de Giovanni Carrá">
-                </div>div>
-        </section>section>
-    
-        <!-- OBJETIVOS -->
-        <section id="objetivos">
-                <div class="section-title">Objetivos</div>div>
-                <div class="objetivos-list">
-                            <div class="objetivo-item">
-                                            <span class="bullet">▸</span>span>
-                                            <span>Profundizar mis conocimientos en programación y desarrollo web.</span>
-                            </div>div>
-                            <div class="objetivo-item">
-                                            <span class="bullet">▸</span>
-                                            <span>Crecer profesionalmente en el área de IT, avanzando de nivel junior a semi senior.</span>
-                            </div>div>
-                            <div class="objetivo-item">
-                                            <span class="bullet">▸</span>
-                                            <span>Participar en proyectos reales que aporten valor y aprendizaje continuo.</span>
-                            </div>div>
-                            <div class="objetivo-item">
-                                            <span class="bullet">▸</span>
-                                            <span>Ampliar mis conocimientos en infraestructura, redes y herramientas cloud.</span>
-                            </div>div>
-                </div>div>
-        </section>section>
-    
-    </main>
-    
-    <footer>
-            <p>Giovanni Carrá &mdash; Diseño y Desarrollo Web &mdash; UADE 2026</p>
-    </footer>
-    
-    </body>
-</html>html></p>
-    </footer></span></span></p></p>
-    </main></li></li>
-                        </ul>
-            </nav></p></h1>
-        </header>
-    </body>
-        </style></title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giovanni Carra - Pagina Personal</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #e8f4fd; color: #333; }
+        header { background: linear-gradient(135deg, #4a90d9, #357abd); color: white; padding: 40px 20px 0 20px; }
+        .header-content { max-width: 900px; margin: 0 auto; display: flex; align-items: center; gap: 24px; padding-bottom: 30px; }
+        .header-avatar { width: 80px; height: 80px; border-radius: 50%; background-color: rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 800; color: white; flex-shrink: 0; border: 3px solid rgba(255,255,255,0.5); }
+        .header-text h1 { font-size: 2rem; margin-bottom: 4px; }
+        .header-text p { font-size: 1rem; opacity: 0.85; }
+        nav { background-color: rgba(0,0,0,0.2); }
+        nav ul { max-width: 900px; margin: 0 auto; list-style: none; display: flex; }
+        nav ul li a { display: block; color: white; text-decoration: none; padding: 14px 22px; font-size: 0.95rem; }
+        nav ul li a:hover { background-color: rgba(255,255,255,0.15); }
+        main { max-width: 900px; margin: 36px auto; padding: 0 20px; }
+        section { margin-bottom: 36px; }
+        .section-title { font-size: 1.3rem; font-weight: 700; color: #357abd; border-left: 4px solid #4a90d9; padding-left: 12px; margin-bottom: 16px; }
+        .card { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+        .sobre-mi-card { font-size: 1.05rem; line-height: 1.7; color: #444; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+        .info-card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); text-align: center; }
+        .info-card .icon { font-size: 2rem; margin-bottom: 10px; }
+        .info-card h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #4a90d9; margin-bottom: 8px; }
+        .info-card p { font-size: 0.95rem; color: #555; line-height: 1.5; }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+        .skill-tag { background: #4a90d9; color: white; border-radius: 20px; padding: 6px 16px; font-size: 0.9rem; font-weight: 500; }
+        .skill-tag.secondary { background: white; color: #357abd; border: 2px solid #4a90d9; }
+        .infografia-wrap { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); text-align: center; }
+        .infografia-wrap img { max-width: 100%; height: auto; border-radius: 8px; }
+        .objetivos-list { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); display: flex; flex-direction: column; gap: 12px; }
+        .objetivo-item { display: flex; align-items: flex-start; gap: 12px; font-size: 1rem; color: #444; line-height: 1.5; }
+        .objetivo-item .bullet { color: #4a90d9; font-size: 1.2rem; flex-shrink: 0; }
+        footer { background: linear-gradient(135deg, #4a90d9, #357abd); color: white; text-align: center; padding: 24px 20px; margin-top: 20px; font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="header-avatar">GC</div>
+        <div class="header-text">
+            <h1>Giovanni Carra</h1>
+            <p>Estudiante de Ingenieria Informatica y Soporte IT - UADE</p>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#sobre-mi">Sobre mi</a></li>
+            <li><a href="#tecnologias">Tecnologias</a></li>
+            <li><a href="#infografia">Infografia</a></li>
+            <li><a href="#objetivos">Objetivos</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section id="sobre-mi">
+        <div class="section-title">Sobre mi</div>
+        <div class="card sobre-mi-card">
+            Hola, soy Giovanni Carra, estudiante de Ingenieria Informatica en UADE. Me especializo en Soporte IT, con experiencia en resolucion de problemas tecnicos, gestion de usuarios y atencion a empleados. Me apasiona la tecnologia y estoy en constante aprendizaje para crecer profesionalmente en el mundo IT.
+        </div>
+    </section>
+    <section id="info">
+        <div class="section-title">Mi perfil</div>
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="icon">&#127891;</div>
+                <h3>Estudios</h3>
+                <p>Ingenieria Informatica - UADE. Aprendiendo programacion, sistemas y tecnologia.</p>
+            </div>
+            <div class="info-card">
+                <div class="icon">&#128188;</div>
+                <h3>Trabajo</h3>
+                <p>Soporte IT interno. Gestion de usuarios, cuentas y sistemas.</p>
+            </div>
+            <div class="info-card">
+                <div class="icon">&#128640;</div>
+                <h3>Perfil</h3>
+                <p>Responsable y resolutivo. Buscando crecer de nivel junior a semi senior.</p>
+            </div>
+        </div>
+    </section>
+    <section id="tecnologias">
+        <div class="section-title">Tecnologias y herramientas</div>
+        <div class="card">
+            <div class="skills-grid">
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">Soporte IT</span>
+                <span class="skill-tag">Bases de IT</span>
+                <span class="skill-tag secondary">Gestion de usuarios</span>
+                <span class="skill-tag secondary">Resolucion de problemas</span>
+                <span class="skill-tag secondary">Herramientas de sistemas</span>
+                <span class="skill-tag secondary">GitHub</span>
+            </div>
+        </div>
+    </section>
+    <section id="infografia">
+        <div class="section-title">Mi Infografia Personal</div>
+        <div class="infografia-wrap">
+            <img src="infografia.jpg" alt="Infografia personal de Giovanni Carra">
+        </div>
+    </section>
+    <section id="objetivos">
+        <div class="section-title">Objetivos</div>
+        <div class="objetivos-list">
+            <div class="objetivo-item"><span class="bullet">&#9658;</span><span>Profundizar mis conocimientos en programacion y desarrollo web.</span></div>
+            <div class="objetivo-item"><span class="bullet">&#9658;</span><span>Crecer profesionalmente en IT, avanzando de nivel junior a semi senior.</span></div>
+            <div class="objetivo-item"><span class="bullet">&#9658;</span><span>Participar en proyectos reales que aporten valor y aprendizaje continuo.</span></div>
+            <div class="objetivo-item"><span class="bullet">&#9658;</span><span>Ampliar conocimientos en infraestructura, redes y herramientas cloud.</span></div>
+        </div>
+    </section>
+</main>
+<footer>
+    <p>Giovanni Carra - Diseno y Desarrollo Web - UADE 2026</p>
+</footer>
+</body>
+</html>
